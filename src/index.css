@@ -1,0 +1,123 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: "Noto Sans Bengali", sans-serif;
+}
+
+.dreamuniversity {
+  background: url(/customAssets/dreamBG.jpg) no-repeat center/cover;
+}
+
+#ClassesOverView {
+  background: url(/customAssets/mainbanner.png) no-repeat center/cover;
+  position: relative;
+  z-index: 1;
+}
+
+#admissionBanner {
+  background: url(/customAssets/bannerBg.jpg) no-repeat center/cover;
+  position: relative;
+  z-index: 1;
+}
+
+#ClassesOverView::after{
+  content: "";
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: -1;
+}
+
+#admissionBanner::after{
+  content: "";
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: -1;
+}
+
+.studyBg {
+  background: url(/customAssets/study.jpg) no-repeat right;
+  background-size: 70%;
+}
+
+.bestTeacher {
+  background: url(/customAssets/download_bg.jpg) no-repeat center/cover;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.bestTeacher::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: -1;
+}
+
+.HotNumber {
+  background: url(/customAssets/callCenter.jpg) no-repeat center/cover;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.HotNumber::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: -1;
+}
+
+.joinTitle {
+  background: url(https://10minuteschool.com/images/home/learning-platform-bg.svg)
+    no-repeat top/cover;
+}
+
+.informationBg {
+  background: url(/customAssets/informationBg.jpg) no-repeat center/cover;
+}
+
+.dreamslider .slick-prev::before {
+  color: rgb(0, 0, 0); /* Change this to your desired color */
+}
+
+.dreamslider .slick-next::before {
+  color: rgb(0, 0, 0); /* Change this to your desired color */
+}
+
+#FirstChoice .slick-prev::before {
+  color: rgb(0, 0, 0); /* Change this to your desired color */
+}
+
+#FirstChoice .slick-next::before {
+  color: rgb(0, 0, 0); /* Change this to your desired color */
+}
+
+#FirstChoice .slick-list {
+  padding-top: 25px !important;
+}
+
+#StudentReview .slick-list {
+  padding-top: 25px !important;
+}
+
+.admissionTeacher .slick-list {
+  padding-top: 25px !important;
+}

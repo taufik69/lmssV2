@@ -1,0 +1,8 @@
+#skill-button:hover #skills-dropdown {
+  display: block;
+  position: absolute;
+}
+#class-button:hover #class-dropdown {
+  display: block;
+  position: absolute;
+}

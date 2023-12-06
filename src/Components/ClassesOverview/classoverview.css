@@ -1,0 +1,14 @@
+.class-wrapper {
+  background: linear-gradient(to bottom, #323232 0%, #3f3f3f 40%, #1c1c1c 150%),
+    linear-gradient(
+      to top,
+      rgba(25, 25, 25, 0.502) 0%,
+      rgba(0, 0, 0, 0.523) 200%
+    );
+  background-blend-mode: multiply;
+}
+.card {
+  overflow: hidden;
+  width: 100px;
+  margin-inline: 10px;
+}
