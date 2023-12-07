@@ -9,8 +9,8 @@ export default function CommonCardOne() {
           <div className="w-[300px] overflow-hidden rounded-md ">
             <div className=" relative">
               <img
-                src="https://10minuteschool.com/_next/image/?url=https%3A%2F%2Fcdn.10minuteschool.com%2Fmd%2Fimages%2Fk-12-courses%2Fhsc_25_ob.jpeg&w=384&q=75"
-                alt=""
+                src="https://thumbs.dreamstime.com/b/job-opportunity-24549521.jpg"
+                alt="skill developement image"
               />
             </div>
             <div className="text h-[100px] flex flex-col justify-between bg-white p-4  border-x border-b border-gray-300 rounded-ee-md ">

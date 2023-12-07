@@ -9,7 +9,7 @@ export default function CommonCardThree() {
           <div className="w-[300px] overflow-hidden   border border-transparent rounded-md hover:border-green-500">
             <div className=" relative">
               <img
-                src="https://10minuteschool.com/_next/image/?url=https%3A%2F%2Fcdn.10minuteschool.com%2Fmd%2Fimages%2Fk-12-courses%2Fhsc_25_ob.jpeg&w=384&q=75"
+                src="https://media.istockphoto.com/id/1128571392/photo/self-development-motivational-words-quotes-concept.jpg?s=612x612&w=0&k=20&c=UGtd_Udk2a5jc3UiLyvYHlseKwPUZDV2J54d7FLR9Zg="
                 alt=""
               />
             </div>

@@ -8,7 +8,7 @@ export default function CommonCardTwo() {
         <div className="w-[300px] p-4 border rounded-md hover:border-green-500">
           <div className=" rounded-md overflow-hidden mb-4 relative">
             <img
-              src="https://10minuteschool.com/_next/image/?url=https%3A%2F%2Fcdn.10minuteschool.com%2Fmd%2Fimages%2Fk-12-courses%2Fhsc_25_ob.jpeg&w=384&q=75"
+              src="https://burst.shopifycdn.com/photos/person-holds-a-book-over-a-stack-and-turns-the-page.jpg?width=1000&format=pjpg&exif=0&iptc=0"
               alt=""
             />
             <div className="play absolute w-20 h-20 flex justify-center items-center bg-neutral-100 rounded-full z-10">
