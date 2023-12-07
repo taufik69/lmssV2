@@ -4,7 +4,9 @@ import Class from "./pages/Classes/Class";
 import Home from "./pages/Home/Home";
 import Login from "./pages/Login/Login";
 import Register from "./pages/Register/Register";
-import PrivateRoute from "./private/PrivateRoute";
+import IsLoginUser from "./private/isLogin";
+import IsNotLoginUser from "./private/IsNotLogin";
+
 import {
   createBrowserRouter,
   RouterProvider,
@@ -15,10 +17,17 @@ import {
 function App() {
   const router = createBrowserRouter(
     createRoutesFromElements(
-      <Route path="/" element={<MainLayouts />}>
-        <Route index element={<Home />} />
-        <Route path="/register" element={<Register />} />
-        <Route path="/login" element={<Login />} />
+      <Route>
+        <Route element={<IsLoginUser />}>
+          <Route path="/" element={<MainLayouts />}>
+            <Route index element={<Home />} />
+          </Route>
+        </Route>
+
+        <Route element={<IsNotLoginUser />}>
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+        </Route>
       </Route>
     )
   );

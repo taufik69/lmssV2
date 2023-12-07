@@ -1,24 +1,20 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  value: 0,
+  loginState: localStorage.getItem("UserToken")
+    ? JSON.parse(localStorage.getItem("UserToken"))
+    : null,
 };
 
 export const LoginSlice = createSlice({
   name: "login",
   initialState,
   reducers: {
-    increment: (state) => {
-      state.value += 1;
-    },
-
-    incrementByAmount: (state, action) => {
-      state.value += action.payload;
+    loginUser: (state, action) => {
+      state.loginState = action.payload;
     },
   },
 });
 
-// Action creators are generated for each case reducer function
-export const { increment, incrementByAmount } = LoginSlice.actions;
-
+export const { loginUser } = LoginSlice.actions;
 export default LoginSlice.reducer;

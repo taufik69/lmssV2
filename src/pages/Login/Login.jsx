@@ -1,14 +1,19 @@
-import React, { useContext, useState } from "react";
+import React, { useState } from "react";
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
-
+import { IoEye } from "react-icons/io5";
+import { IoEyeOff } from "react-icons/io5";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { useDispatch } from "react-redux";
+import { loginUser } from "../../ReduxFeatures/allSlice/LoginSlice";
 
 const Login = () => {
   const [username, setusername] = useState("");
   const [password, setPassword] = useState("");
+  const [Eyeicon, setEyeicon] = useState(false);
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   // sing with google
   const handelSinginWithGoogle = () => {
@@ -21,16 +26,13 @@ const Login = () => {
       .catch((error) => console.error(error));
   };
 
-  // const handelFormSubmit = (e) => {
-  //   e.preventDefault();
-  //   sinInWithEmail(email, password)
-  //     .then((userCredential) => {
-  //       const user = userCredential.user;
-  //       navigate("/");
-  //       console.log(user);
-  //     })
-  //     .catch((error) => console.error(error));
-  // };
+  /**
+   * @function (){HandleIcon}
+   * @todo : change the password type
+   */
+  const HandleIcon = () => {
+    setEyeicon(!Eyeicon);
+  };
 
   /**
    * @HandleLogin function thats take a private api
@@ -50,11 +52,13 @@ const Login = () => {
       );
       const { data } = loginData;
       /**
-       * todo : set authectication token in localStorage
+       * todo1 : set authectication token in localStorage
+       * todo2 : dispatch the user credentialin userlogin reducer
        */
 
       if (data) {
         localStorage.setItem("UserToken", JSON.stringify(data));
+        dispatch(loginUser(data));
         toast.success(`login sucessfull`, {
           position: "top-right",
           autoClose: 2000,
@@ -65,11 +69,11 @@ const Login = () => {
           progress: undefined,
           theme: "light",
         });
-      }
 
-      setTimeout(() => {
-        navigate("/");
-      }, 2000);
+        setTimeout(() => {
+          navigate("/");
+        }, 2000);
+      }
     } catch (err) {
       const { error } = err.response.data;
       toast.error(error, {
@@ -137,7 +141,7 @@ const Login = () => {
                     required=""
                   />
                 </div>
-                <div>
+                <div className="relative">
                   <label
                     for="password"
                     className="block mb-2 text-sm font-medium text-gray-900 "
@@ -146,13 +150,25 @@ const Login = () => {
                   </label>
                   <input
                     onChange={(e) => setPassword(e.target.value)}
-                    type="password"
+                    type={Eyeicon ? "text" : "password"}
                     name="password"
                     id="password"
                     placeholder="••••••••"
                     className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 "
                     required=""
                   />
+
+                  {Eyeicon ? (
+                    <IoEyeOff
+                      className="absolute top-[60%] right-[5%] cursor-pointer"
+                      onClick={HandleIcon}
+                    />
+                  ) : (
+                    <IoEye
+                      className="absolute top-[60%] right-[5%] cursor-pointer"
+                      onClick={HandleIcon}
+                    />
+                  )}
                 </div>
                 <div className="flex items-center justify-end">
                   <a

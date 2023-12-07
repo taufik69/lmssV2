@@ -1,40 +1,17 @@
-import React, { useContext, useState } from "react";
+import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { ToastContainer, toast } from "react-toastify";
 import axios from "axios";
+import { IoEye } from "react-icons/io5";
+import { IoEyeOff } from "react-icons/io5";
 
 const Register = () => {
   const navigate = useNavigate();
   const [fullName, setFullName] = useState();
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
-
-
-  // handel name
-  const handelName = (e) => {
-    setFullName(e.target.value);
-  };
-  // handel emailon change
-  const handelEmail = (e) => {
-    setEmail(e.target.value);
-  };
-  //handelPass
-
-  const handelPassword = (e) => {
-    setPassword(e.target.value);
-  };
-
-  // sing with google
-  // const handelSinginWithGoogle = () => {
-  //   createUserWithGoogleAuthProvider()
-  //     .then((userCredential) => {
-  //       const user = userCredential.user;
-  //       navigate("/");
-  //       console.log(user);
-  //     })
-  //     .catch((error) => console.error(error));
-  // };
+  const [Eyeicon, setEyeicon] = useState(false);
 
   const handelSinginWithGoogle = (e) => {
     e.preventDefault();
@@ -49,6 +26,14 @@ const Register = () => {
         console.log(user);
       })
       .catch((error) => console.log(error));
+  };
+
+  /**
+   * @function (){HandleIcon}
+   * todo : change the password type
+   */
+  const HandleIcon = () => {
+    setEyeicon(!Eyeicon);
   };
 
   /**
@@ -130,9 +115,7 @@ const Register = () => {
                     Your Full Name
                   </label>
                   <input
-                    onChange={(e) => {
-                      handelName(e);
-                    }}
+                    onChange={(e) => setFullName(e.target.value)}
                     type="text"
                     name="name"
                     id="name"
@@ -144,23 +127,21 @@ const Register = () => {
                 <div>
                   <label
                     for="email"
-                    className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                    className="block mb-2 text-sm font-medium text-gray-900 "
                   >
                     Your email
                   </label>
                   <input
-                    onChange={(e) => {
-                      handelEmail(e);
-                    }}
+                    onChange={(e) => setEmail(e.target.value)}
                     type="email"
                     name="email"
                     id="email"
-                    className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                    className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 "
                     placeholder="name@company.com"
                     required=""
                   />
                 </div>
-                <div>
+                <div className="relative">
                   <label
                     for="password"
                     className="block mb-2 text-sm font-medium text-gray-900 "
@@ -168,14 +149,25 @@ const Register = () => {
                     Password
                   </label>
                   <input
-                    onChange={(e) => handelPassword(e)}
-                    type="password"
+                    onChange={(e) => setPassword(e.target.value)}
+                    type={Eyeicon ? "text" : "password"}
                     name="password"
                     id="password"
                     placeholder="••••••••"
                     className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 "
                     required=""
                   />
+                  {Eyeicon ? (
+                    <IoEyeOff
+                      className="absolute top-[60%] right-[5%] cursor-pointer"
+                      onClick={HandleIcon}
+                    />
+                  ) : (
+                    <IoEye
+                      className="absolute top-[60%] right-[5%] cursor-pointer"
+                      onClick={HandleIcon}
+                    />
+                  )}
                 </div>
                 <button
                   type="submit"
