@@ -1,20 +1,16 @@
-import { useContext, useEffect, useState } from "react";
-
+import { useEffect, useState } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
-import { authContext } from "../../../context/UserContext";
 import "./navbar.css";
 const Navbar1 = () => {
-  const { url, setUrl } = useContext(authContext);
   const link = useLocation();
   // useEffect(() => {
   //   seturl(link);
   // }, []);
   // console.log(link.pathname);
-  setUrl(link.pathname)
+  // setUrl(link.pathname)
   const [show, setShow] = useState(false);
   const [classShow, setClassShow] = useState(false);
   const [skillShow, setSkillShow] = useState(false);
-  const { user, logoutFromAccount } = useContext(authContext);
 
   function getWindowSize() {
     const { innerWidth, innerHeight } = window;
@@ -50,7 +46,7 @@ const Navbar1 = () => {
     if (windowSize.innerWidth < 768) {
       handelNavbar();
     }
-  }, [url]);
+  }, []);
 
   // console.log(windowSize.innerWidth);
   return (
@@ -404,21 +400,21 @@ const Navbar1 = () => {
                   অনলাইন ব্যাচ
                 </Link>
               </li>
-              {user?.email ? (
+            
                 <button
                   onClick={() => logoutFromAccount()}
                   className="bg-black py-3 px-5 text-white rounded hover:bg-slate-950"
                 >
                   লগ আউট
                 </button>
-              ) : (
-                <Link
+        
+                {/* <Link
                   to="/login"
                   className="bg-black py-3 px-5 text-white rounded hover:bg-slate-950"
                 >
                   লগ-ইন
-                </Link>
-              )}
+                </Link> */}
+             
             </ul>
           </div>
         </div>

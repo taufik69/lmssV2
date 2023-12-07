@@ -1,15 +1,13 @@
 import React, { useContext, useState } from "react";
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
-import { authContext } from "../../../context/UserContext";
+
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const Login = () => {
   const [username, setusername] = useState("");
   const [password, setPassword] = useState("");
-  const { createUserWithGoogleAuthProvider, sinInWithEmail } =
-    useContext(authContext);
   const navigate = useNavigate();
 
   // sing with google

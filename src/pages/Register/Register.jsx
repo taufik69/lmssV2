@@ -1,6 +1,5 @@
 import React, { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { authContext } from "../../../context/UserContext";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import axios from "axios";
@@ -10,12 +9,7 @@ const Register = () => {
   const [fullName, setFullName] = useState();
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
-  const {
-    createUserWithGoogleAuthProvider,
-    createUserwithEmail,
-    updateUserProfile,
-    emailVerification,
-  } = useContext(authContext);
+
 
   // handel name
   const handelName = (e) => {
