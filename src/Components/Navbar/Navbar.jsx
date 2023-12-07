@@ -1,11 +1,19 @@
 import { useEffect, useState } from "react";
 import { Link, NavLink, useNavigate } from "react-router-dom";
+import useFetchAPI from "../../CustomFetcher/CustomFetchHooks";
 import "./navbar.css";
+
 const Navbar1 = () => {
   const Navigate = useNavigate();
   const [show, setShow] = useState(false);
   const [classShow, setClassShow] = useState(false);
   const [skillShow, setSkillShow] = useState(false);
+
+  /**
+   * todo : Fetching catagoreis Data catagories means menu item
+   * @API : https://ex-3academy.com/lms/categories/
+   */
+  const catagoreyData = useFetchAPI("https://ex-3academy.com/lms/categories/");
 
   function getWindowSize() {
     const { innerWidth, innerHeight } = window;
@@ -97,316 +105,60 @@ const Navbar1 = () => {
             id="navbar-dropdown"
           >
             <ul className="flex flex-col items-center font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-5 md:mt-0 md:border-0 md:bg-white">
-              {/* <li>
-                <Link
-                  to="#"
-                  className="block py-2 pl-3 pr-4 text-black bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 "
-                  aria-current="page"
-                >
-                  ক্লাস ৫-১২
-                </Link>
-              </li> */}
-              <li id="class-button">
-                <button
-                  onClick={handelClassShow}
-                  id="dropdownNavbarLink"
-                  className="flex items-center justify-between w-full py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 md:w-auto"
-                >
-                  ক্লাস ৫-১২
-                  <svg
-                    className="w-2.5 h-2.5 ml-2.5"
-                    aria-hidden="true"
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 10 6"
+              {catagoreyData.data?.map((item) => (
+                <li id="class-button" key={item.id}>
+                  <button
+                    onClick={handelClassShow}
+                    id="dropdownNavbarLink"
+                    className="flex items-center justify-between w-full py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 md:w-auto"
                   >
-                    <path
-                      stroke="currentColor"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      d="m1 1 4 4 4-4"
-                    />
-                  </svg>
-                </button>
-                {/* <!-- Dropdown menu --> */}
-                <div
-                  id="class-dropdown"
-                  className={`z-10 hidden font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-44`}
-                >
-                  <ul
-                    className="py-2 text-gray-700 "
-                    aria-labelledby="dropdownLargeButton"
+                    {item.category_title}
+                    <svg
+                      className="w-2.5 h-2.5 ml-2.5"
+                      aria-hidden="true"
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 10 6"
+                    >
+                      <path
+                        stroke="currentColor"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth="2"
+                        d="m1 1 4 4 4-4"
+                      />
+                    </svg>
+                  </button>
+                  {/* <!-- Dropdown menu --> */}
+
+                  <div
+                    id="class-dropdown"
+                    className={`z-10 hidden font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-44`}
                   >
-                    <li>
-                      <Link
-                        to={"class/class-5"}
-                        className="block px-4 py-4 hover:bg-gray-100"
-                      >
-                        <div className="flex gap-1 items-center">
-                          <img
-                            width="28"
-                            height="28"
-                            src="https://img.icons8.com/fluency/48/class.png"
-                            alt="class"
-                          />
-                          <span className="text-lg">ক্লাস ৫</span>
-                        </div>
-                      </Link>
-                    </li>
-                    <li>
-                      <Link
-                        to={"class/class-6"}
-                        className="block px-4 py-4 hover:bg-gray-100"
-                      >
-                        <div className="flex gap-1 items-center">
-                          <img
-                            width="28"
-                            height="28"
-                            src="https://img.icons8.com/fluency/48/class.png"
-                            alt="class"
-                          />
-                          <span className="text-lg">ক্লাস ৬</span>
-                        </div>
-                      </Link>
-                    </li>
-                    <li>
-                      <Link
-                        to={"class/class-7"}
-                        className="block px-4 py-4 hover:bg-gray-100"
-                      >
-                        <div className="flex gap-1 items-center">
-                          <img
-                            width="28"
-                            height="28"
-                            src="https://img.icons8.com/fluency/48/class.png"
-                            alt="development-skill"
-                          />
-                          <span className="text-lg">ক্লাস ৭</span>
-                        </div>
-                      </Link>
-                    </li>
-                    <li>
-                      <Link
-                        to={"class/class-8"}
-                        className="block px-4 py-4 hover:bg-gray-100"
-                      >
-                        <div className="flex gap-1 items-center">
-                          <img
-                            width="28"
-                            height="28"
-                            src="https://img.icons8.com/fluency/48/class.png"
-                            alt="development-skill"
-                          />
-                          <span className="text-lg">ক্লাস ৮</span>
-                        </div>
-                      </Link>
-                    </li>
-                    <li>
-                      <Link
-                        to={"class/class-9"}
-                        className="block px-4 py-4 hover:bg-gray-100"
-                      >
-                        <div className="flex gap-1 items-center">
-                          <img
-                            width="28"
-                            height="28"
-                            src="https://img.icons8.com/fluency/48/class.png"
-                            alt="development-skill"
-                          />
-                          <span className="text-lg">ক্লাস ৯</span>
-                        </div>
-                      </Link>
-                    </li>
-                    <li>
-                      <Link
-                        to={"class/class-10"}
-                        className="block px-4 py-4 hover:bg-gray-100"
-                      >
-                        <div className="flex gap-1 items-center">
-                          <img
-                            width="28"
-                            height="28"
-                            src="https://img.icons8.com/fluency/48/class.png"
-                            alt="development-skill"
-                          />
-                          <span className="text-lg">ক্লাস ১০</span>
-                        </div>
-                      </Link>
-                    </li>
-                    <li>
-                      <Link
-                        to={"class/class-hsc"}
-                        className="block px-4 py-4 hover:bg-gray-100"
-                      >
-                        <div className="flex gap-1 items-center">
-                          <img
-                            width="28"
-                            height="28"
-                            src="https://img.icons8.com/fluency/48/class.png"
-                            alt="development-skill"
-                          />
-                          <span className="text-lg">এইচএসসি</span>
-                        </div>
-                      </Link>
-                    </li>
-                  </ul>
-                </div>
-              </li>
-              <li id="skill-button">
-                <button
-                  onClick={handelSkillhow}
-                  className="flex items-center justify-between w-full py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 md:w-auto"
-                >
-                  স্কিলস{" "}
-                  <svg
-                    className="w-2.5 h-2.5 ml-2.5"
-                    aria-hidden="true"
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 10 6"
-                  >
-                    <path
-                      stroke="currentColor"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      d="m1 1 4 4 4-4"
-                    />
-                  </svg>
-                </button>
-                {/* <!-- Dropdown menu --> */}
-                <div
-                  id="skills-dropdown"
-                  className={`z-10 hidden font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-44`}
-                >
-                  <ul
-                    className="py-2 text-gray-700 "
-                    aria-labelledby="dropdownLargeButton"
-                  >
-                    <li>
-                      <Link
-                        to={"/skill"}
-                        className="block px-4 py-4 hover:bg-gray-100"
-                      >
-                        <div className="flex gap-1 items-center">
-                          <img
-                            width="28"
-                            height="28"
-                            src="https://img.icons8.com/fluency/48/development-skill.png"
-                            alt="development-skill"
-                          />
-                          <span className="text-lg">অনলাইন ব্যাচ</span>
-                        </div>
-                      </Link>
-                    </li>
-                    <li>
-                      <Link
-                        to={"/skill"}
-                        className="block px-4 py-4 hover:bg-gray-100"
-                      >
-                        <div className="flex gap-1 items-center">
-                          <img
-                            width="28"
-                            height="28"
-                            src="https://img.icons8.com/fluency/48/development-skill.png"
-                            alt="development-skill"
-                          />
-                          <span className="text-lg">অনলাইন ব্যাচ</span>
-                        </div>
-                      </Link>
-                    </li>
-                    <li>
-                      <Link
-                        to={"/skill"}
-                        className="block px-4 py-4 hover:bg-gray-100"
-                      >
-                        <div className="flex gap-1 items-center">
-                          <img
-                            width="28"
-                            height="28"
-                            src="https://img.icons8.com/fluency/48/development-skill.png"
-                            alt="development-skill"
-                          />
-                          <span className="text-lg">অনলাইন ব্যাচ</span>
-                        </div>
-                      </Link>
-                    </li>
-                    <li>
-                      <Link
-                        to={"/skill"}
-                        className="block px-4 py-4 hover:bg-gray-100"
-                      >
-                        <div className="flex gap-1 items-center">
-                          <img
-                            width="28"
-                            height="28"
-                            src="https://img.icons8.com/fluency/48/development-skill.png"
-                            alt="development-skill"
-                          />
-                          <span className="text-lg">অনলাইন ব্যাচ</span>
-                        </div>
-                      </Link>
-                    </li>
-                    <li>
-                      <Link
-                        to={"/skill"}
-                        className="block px-4 py-4 hover:bg-gray-100"
-                      >
-                        <div className="flex gap-1 items-center">
-                          <img
-                            width="28"
-                            height="28"
-                            src="https://img.icons8.com/fluency/48/development-skill.png"
-                            alt="development-skill"
-                          />
-                          <span className="text-lg">অনলাইন ব্যাচ</span>
-                        </div>
-                      </Link>
-                    </li>
-                    <li>
-                      <Link
-                        to={"/skill"}
-                        className="block px-4 py-4 hover:bg-gray-100"
-                      >
-                        <div className="flex gap-1 items-center">
-                          <img
-                            width="28"
-                            height="28"
-                            src="https://img.icons8.com/fluency/48/development-skill.png"
-                            alt="development-skill"
-                          />
-                          <span className="text-lg">অনলাইন ব্যাচ</span>
-                        </div>
-                      </Link>
-                    </li>
-                  </ul>
-                </div>
-              </li>
-              <li>
-                <Link
-                  to="/admission"
-                  className="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 "
-                >
-                  ভর্তি পরীক্ষা
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="#"
-                  className="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0"
-                >
-                  চাকরি প্রস্তুতি
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="#"
-                  className="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0"
-                >
-                  অনলাইন ব্যাচ
-                </Link>
-              </li>
+                    <ul
+                      className="py-2 text-gray-700 "
+                      aria-labelledby="dropdownLargeButton"
+                    >
+                      <li>
+                        <Link
+                          to={"class/class-5"}
+                          className="block px-4 py-4 hover:bg-gray-100"
+                        >
+                          <div className="flex gap-1 items-center">
+                            <img
+                              width="28"
+                              height="28"
+                              src="https://img.icons8.com/fluency/48/class.png"
+                              alt="class"
+                            />
+                            <span className="text-lg">ক্লাস ৫</span>
+                          </div>
+                        </Link>
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+              ))}
 
               <button
                 onClick={Handlelogout}
