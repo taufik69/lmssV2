@@ -4,9 +4,8 @@ import Login from "../pages/Login/Login";
 
 const IsLoginUser = () => {
   const userLoginInfo = useSelector((item) => item.LoginSlice.loginState);
-  const { access, refresh } = userLoginInfo;
-  console.log("login route", access);
-  return access ? <Outlet /> : <Login />;
+
+  return userLoginInfo ? <Outlet /> : <Login />;
 };
 
 export default IsLoginUser;

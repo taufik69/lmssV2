@@ -1,12 +1,10 @@
 import { useSelector } from "react-redux";
-import { Navigate } from "react-router-dom";
-import Login from "../pages/Login/Login";
+import { Navigate, Outlet } from "react-router-dom";
+
 
 const IsNotLoginUser = () => {
   const userLoginInfo = useSelector((item) => item.LoginSlice.loginState);
-  const { access, refresh } = userLoginInfo;
-  console.log("Not login route", access);
-  return access ? <Navigate to="/" /> : <Login />;
+  return userLoginInfo ? <Navigate to="/" /> : <Outlet />;
 };
 
 export default IsNotLoginUser;

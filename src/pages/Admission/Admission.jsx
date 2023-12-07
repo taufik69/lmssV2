@@ -1,5 +1,4 @@
 import React from "react";
-
 import { AdmissionBanner } from "../../Components/AdmissionBanner/AdmissionBanner";
 import LiveCourse from "../../Components/LiveCourse/LiveCourse";
 import SuccessRate from "../../Components/SuccessRate/SuccessRate";

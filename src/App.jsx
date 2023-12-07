@@ -21,6 +21,8 @@ function App() {
         <Route element={<IsLoginUser />}>
           <Route path="/" element={<MainLayouts />}>
             <Route index element={<Home />} />
+            <Route path="/admission" element={<Admission />} />
+            <Route path="/class" element={<Class />} />
           </Route>
         </Route>
 
@@ -28,6 +30,7 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
         </Route>
+        <Route path="*" element={<h1> page not found </h1>} />
       </Route>
     )
   );

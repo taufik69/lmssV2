@@ -57,8 +57,6 @@ const Login = () => {
        */
 
       if (data) {
-        localStorage.setItem("UserToken", JSON.stringify(data));
-        dispatch(loginUser(data));
         toast.success(`login sucessfull`, {
           position: "top-right",
           autoClose: 2000,
@@ -69,11 +67,10 @@ const Login = () => {
           progress: undefined,
           theme: "light",
         });
-
-        setTimeout(() => {
-          navigate("/");
-        }, 2000);
+        localStorage.setItem("UserToken", JSON.stringify(data));
+        dispatch(loginUser(data));
       }
+  
     } catch (err) {
       const { error } = err.response.data;
       toast.error(error, {
@@ -93,7 +90,7 @@ const Login = () => {
     <div>
       <ToastContainer
         position="top-right"
-        autoClose={7000}
+        autoClose={4000}
         hideProgressBar={false}
         newestOnTop={false}
         closeOnClick

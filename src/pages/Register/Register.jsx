@@ -177,8 +177,8 @@ const Register = () => {
                   Register
                 </button>
 
-                <p className="text-sm font-light text-gray-500 ">
-                  Already have an account yet?{" "}
+                <p className="text-sm font-light text-gray-500 cursor-pointer ">
+                  Already have an account yet?
                   <Link
                     to={"/login"}
                     className="font-medium text-primary-600 hover:underline "

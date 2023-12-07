@@ -51,7 +51,11 @@ export const AdmissionTeacher = () => {
                   <div className="">
                     <div className=" bg-white  rounded-md bg-whitepy-10 p-4 flex flex-col items-center justify-center  border border-slate-300">
                       <div className="w-24 h-24 bg-slate-500 rounded-full">
-                        <img src="" alt="" />
+                        <img
+                          className="w-full h-full rounded-full object-cover"
+                          src="https://scontent.fdac88-1.fna.fbcdn.net/v/t39.30808-6/384512392_338384242080061_5880688869275712686_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=efb6e6&_nc_eui2=AeFFoM98TJF2aL8tvS-VmX_9HHHpWUKbxaMccelZQpvFo4g_4zZDMw8bb17Ka_MXgiuhT-qk-s0xi6sQ0-QRvuaA&_nc_ohc=PGWaj0QP36EAX-vWABq&_nc_ht=scontent.fdac88-1.fna&oh=00_AfBPcHd0DvGdkUrqv8W7vJvzykzVeXy7iIAnPsPUKyO4jA&oe=657773B7"
+                          alt=""
+                        />
                       </div>
 
                       <div className="mt-6 text-center">
@@ -74,7 +78,11 @@ export const AdmissionTeacher = () => {
                   <div className="">
                     <div className=" bg-white  rounded-md bg-whitepy-10 p-4 flex flex-col items-center justify-center  border border-slate-300">
                       <div className="w-24 h-24 bg-slate-500 rounded-full">
-                        <img src="" alt="" />
+                        <img
+                          className="w-full h-full rounded-full object-cover"
+                          src="https://scontent.fdac88-1.fna.fbcdn.net/v/t39.30808-6/384512392_338384242080061_5880688869275712686_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=efb6e6&_nc_eui2=AeFFoM98TJF2aL8tvS-VmX_9HHHpWUKbxaMccelZQpvFo4g_4zZDMw8bb17Ka_MXgiuhT-qk-s0xi6sQ0-QRvuaA&_nc_ohc=PGWaj0QP36EAX-vWABq&_nc_ht=scontent.fdac88-1.fna&oh=00_AfBPcHd0DvGdkUrqv8W7vJvzykzVeXy7iIAnPsPUKyO4jA&oe=657773B7"
+                          alt=""
+                        />
                       </div>
 
                       <div className="mt-6 text-center">
@@ -97,7 +105,11 @@ export const AdmissionTeacher = () => {
                   <div className="">
                     <div className=" bg-white  rounded-md bg-whitepy-10 p-4 flex flex-col items-center justify-center  border border-slate-300">
                       <div className="w-24 h-24 bg-slate-500 rounded-full">
-                        <img src="" alt="" />
+                        <img
+                          className="w-full h-full rounded-full object-cover"
+                          src="https://scontent.fdac88-1.fna.fbcdn.net/v/t39.30808-6/384512392_338384242080061_5880688869275712686_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=efb6e6&_nc_eui2=AeFFoM98TJF2aL8tvS-VmX_9HHHpWUKbxaMccelZQpvFo4g_4zZDMw8bb17Ka_MXgiuhT-qk-s0xi6sQ0-QRvuaA&_nc_ohc=PGWaj0QP36EAX-vWABq&_nc_ht=scontent.fdac88-1.fna&oh=00_AfBPcHd0DvGdkUrqv8W7vJvzykzVeXy7iIAnPsPUKyO4jA&oe=657773B7"
+                          alt=""
+                        />
                       </div>
 
                       <div className="mt-6 text-center">
@@ -120,7 +132,11 @@ export const AdmissionTeacher = () => {
                   <div className="">
                     <div className=" bg-white  rounded-md bg-whitepy-10 p-4 flex flex-col items-center justify-center  border border-slate-300">
                       <div className="w-24 h-24 bg-slate-500 rounded-full">
-                        <img src="" alt="" />
+                        <img
+                          className="w-full h-full rounded-full object-cover"
+                          src="https://scontent.fdac88-1.fna.fbcdn.net/v/t39.30808-6/384512392_338384242080061_5880688869275712686_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=efb6e6&_nc_eui2=AeFFoM98TJF2aL8tvS-VmX_9HHHpWUKbxaMccelZQpvFo4g_4zZDMw8bb17Ka_MXgiuhT-qk-s0xi6sQ0-QRvuaA&_nc_ohc=PGWaj0QP36EAX-vWABq&_nc_ht=scontent.fdac88-1.fna&oh=00_AfBPcHd0DvGdkUrqv8W7vJvzykzVeXy7iIAnPsPUKyO4jA&oe=657773B7"
+                          alt=""
+                        />
                       </div>
 
                       <div className="mt-6 text-center">
@@ -143,7 +159,11 @@ export const AdmissionTeacher = () => {
                   <div className="">
                     <div className=" bg-white  rounded-md bg-whitepy-10 p-4 flex flex-col items-center justify-center  border border-slate-300">
                       <div className="w-24 h-24 bg-slate-500 rounded-full">
-                        <img src="" alt="" />
+                        <img
+                          className="w-full h-full rounded-full object-cover"
+                          src="https://scontent.fdac88-1.fna.fbcdn.net/v/t39.30808-6/384512392_338384242080061_5880688869275712686_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=efb6e6&_nc_eui2=AeFFoM98TJF2aL8tvS-VmX_9HHHpWUKbxaMccelZQpvFo4g_4zZDMw8bb17Ka_MXgiuhT-qk-s0xi6sQ0-QRvuaA&_nc_ohc=PGWaj0QP36EAX-vWABq&_nc_ht=scontent.fdac88-1.fna&oh=00_AfBPcHd0DvGdkUrqv8W7vJvzykzVeXy7iIAnPsPUKyO4jA&oe=657773B7"
+                          alt=""
+                        />
                       </div>
 
                       <div className="mt-6 text-center">
