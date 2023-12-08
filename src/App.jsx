@@ -22,7 +22,7 @@ function App() {
           <Route path="/" element={<MainLayouts />}>
             <Route index element={<Home />} />
             <Route path="/admission" element={<Admission />} />
-            <Route path="/class" element={<Class />} />
+            <Route path="/class/:classId" element={<Class />} />
           </Route>
         </Route>
 
