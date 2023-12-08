@@ -14,8 +14,7 @@ const SubjectCard = ({ subject }) => {
         </div>
         <div className="text">
           <h2 className="font-semibold text-lg text-gray-600">
-            {subject}
-            বাংলা ১ম পত্র
+            {subject ? subject : "বাংলা ১ম পত্র"}
           </h2>
         </div>
       </div>
