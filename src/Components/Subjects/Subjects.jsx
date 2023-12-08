@@ -5,7 +5,7 @@ import useFetchAPI from "../../CustomFetcher/CustomFetchHooks";
 
 const Subjects = () => {
   const SubjectData = useFetchAPI("https://ex-3academy.com/lms/subjects/");
-  console.log(SubjectData.data);
+
   return (
     <div className="max-w-screen-xl mx-auto pb-4">
       <div className="text text-center">

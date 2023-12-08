@@ -6,6 +6,8 @@ import Login from "./pages/Login/Login";
 import Register from "./pages/Register/Register";
 import IsLoginUser from "./private/isLogin";
 import IsNotLoginUser from "./private/IsNotLogin";
+import { SkillsPage } from "./pages/Skills/SkillsPage";
+import Jobpreparationpage from "./pages/jobPreparation/Jobpreparationpage";
 
 import {
   createBrowserRouter,
@@ -21,8 +23,10 @@ function App() {
         <Route element={<IsLoginUser />}>
           <Route path="/" element={<MainLayouts />}>
             <Route index element={<Home />} />
-            <Route path="/admission" element={<Admission />} />
+            <Route path="/Admission" element={<Admission />} />
             <Route path="/class/:classId" element={<Class />} />
+            <Route path="/স্কিলস" element={<SkillsPage />} />
+            <Route path="/চাকরি প্রস্তুতি" element={<Jobpreparationpage />} />
           </Route>
         </Route>
 

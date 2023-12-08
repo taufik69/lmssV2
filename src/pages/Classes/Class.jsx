@@ -27,7 +27,7 @@ const Class = () => {
       case "class-10":
         setClassRank("দশম শ্রেনি");
         break;
-      case "class-hsc":
+      case "class-11":
         setClassRank("এইচএসসি");
         break;
 

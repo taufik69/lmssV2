@@ -45,8 +45,13 @@ const Navbar1 = () => {
   const handelNavbar = () => {
     setShow(!show);
   };
-  const handelClassShow = () => {
+  const handelClassShow = (item) => {
     setClassShow(!classShow);
+    if (item == "ক্লাস 5 -6") {
+      Navigate("class/class-4");
+    } else {
+      Navigate(`${item}`);
+    }
   };
 
   const handelSkillhow = () => {
@@ -114,10 +119,10 @@ const Navbar1 = () => {
           >
             <ul className="flex flex-col items-center font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-5 md:mt-0 md:border-0 md:bg-white">
               {catagoreyData.data?.map((item, index) =>
-                index < 2 ? (
+                index > 0 && index < 2 ? (
                   <li id="class-button" key={item.id}>
                     <button
-                      onClick={handelClassShow}
+                      onClick={() => handelClassShow(item.category_title)}
                       id="dropdownNavbarLink"
                       className="flex items-center justify-between w-full py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 md:w-auto"
                     >
@@ -151,7 +156,7 @@ const Navbar1 = () => {
                         {classRankedData.data?.map((subitem) => (
                           <li key={subitem.id}>
                             <Link
-                              to={`class/class-${4 + subitem.id}`}
+                              to={`class/class-${3 + subitem.id}`}
                               className="block px-4 py-4 hover:bg-gray-100"
                             >
                               <div className="flex gap-1 items-center">
@@ -174,7 +179,7 @@ const Navbar1 = () => {
                 ) : (
                   <li id="class-button" key={item.id}>
                     <button
-                      onClick={handelClassShow}
+                      onClick={() => handelClassShow(item.category_title)}
                       id="dropdownNavbarLink"
                       className="flex items-center justify-between w-full py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 md:w-auto"
                     >
