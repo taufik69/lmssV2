@@ -4,7 +4,11 @@ import Title from "../Titles/Title";
 import TitleTag from "../Titles/TitleTag";
 import "./annuallyonlineClass.css";
 // import Button from "../Extra/button";
+import useFetchAPI from "../../CustomFetcher/CustomFetchHooks";
+
 const AnnuallyOnlineClass = () => {
+  const classVedio = useFetchAPI("https://ex-3academy.com/lms/videos/");
+
   return (
     <>
       <div className="py-20">
@@ -23,12 +27,11 @@ const AnnuallyOnlineClass = () => {
             }
           />
           <div className="flex md:justify-between justify-center gap-y-3 flex-wrap  py-10 md:px-0 px-3">
-            {/* item 1 */}
-            <CommonCard />
-            {/* item2 */}
-            <CommonCard />
-            {/* item 3 */}
-            <CommonCard />
+            {classVedio.data?.map((item) => 
+            <CommonCard  />
+
+            )}
+            
           </div>
         </div>
         <div>
