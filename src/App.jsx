@@ -8,6 +8,8 @@ import IsLoginUser from "./private/isLogin";
 import IsNotLoginUser from "./private/IsNotLogin";
 import { SkillsPage } from "./pages/Skills/SkillsPage";
 import Jobpreparationpage from "./pages/jobPreparation/Jobpreparationpage";
+import OnlineBatch from "./pages/OnlineBatch/OnlineBatch";
+import AddmissonTest from "./pages/AdmissonTest/AddmissonTest";
 
 import {
   createBrowserRouter,
@@ -24,6 +26,8 @@ function App() {
           <Route path="/" element={<MainLayouts />}>
             <Route index element={<Home />} />
             <Route path="/Admission" element={<Admission />} />
+            <Route path="/অনলাইন ব্যাচ" element={<OnlineBatch />} />
+            <Route path="/ভর্তি পরীক্ষা" element={<AddmissonTest />} />
             <Route path="/class/:classId" element={<Class />} />
             <Route path="/স্কিলস" element={<SkillsPage />} />
             <Route path="/চাকরি প্রস্তুতি" element={<Jobpreparationpage />} />
