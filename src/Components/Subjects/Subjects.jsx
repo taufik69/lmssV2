@@ -1,10 +1,40 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import DesktopCard from "../Cards/DesktopCard/DesktopCard";
 import SubjectCard from "../Cards/SubjectCard/SubjectCard";
-import useFetchAPI from "../../CustomFetcher/CustomFetchHooks";
+import axios from "axios";
 
-const Subjects = () => {
-  const SubjectData = useFetchAPI("https://ex-3academy.com/lms/subjects/");
+const Subjects = ({ classRank }) => {
+  const [classSubject, setclassSubject] = useState([]);
+  const [aboveSix, setaboveSix] = useState([]);
+  const [belowSix, setbelowSix] = useState([]);
+  useEffect(() => {
+    const allsubject = async () => {
+      const Classdata = await axios.get(
+        "https://ex-3academy.com/lms/subjects/"
+      );
+      setclassSubject(Classdata.data);
+    };
+
+    allsubject();
+
+    /**
+     * todo  : this map function working filtering the subcatgories data and store the title
+     */
+
+    let belowSixArr = [];
+    let aboveSixArr = [];
+
+    classSubject.map((item, index) => {
+      if (item.subCategory[index] <= 6) {
+        belowSixArr.push(item.subject_title);
+      } else {
+        aboveSixArr.push(item.subject_title);
+      }
+    });
+
+    setaboveSix(aboveSixArr);
+    setbelowSix(belowSixArr);
+  }, [classRank]);
 
   return (
     <div className="max-w-screen-xl mx-auto pb-4">
@@ -13,8 +43,8 @@ const Subjects = () => {
       </div>
       <div>
         <div className="mt-4 flex gap-2 flex-wrap justify-center">
-          {SubjectData.data?.map((sub) => (
-            <SubjectCard subject={sub.subject_title} />
+          {aboveSix.map((item) => (
+            <SubjectCard subject={item} />
           ))}
         </div>
         <div className="flex gap-5 mt-20 flex-col md:flex-row">

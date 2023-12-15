@@ -46,7 +46,6 @@ const Navbar1 = () => {
     setShow(!show);
   };
   const handelClassShow = (item) => {
-   
     setClassShow(!classShow);
     if (item == "All Classes") {
       Navigate("class/class-5");

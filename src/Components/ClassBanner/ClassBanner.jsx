@@ -1,7 +1,6 @@
 import React from "react";
 
 const ClassBanner = ({ classRank, subtitle }) => {
-  console.log(classRank);
   return (
     <div className="bg-gray-900 mb-14 py-10 w-full overflow-hidden mt-20">
       <div className="max-w-screen-xl h-full mx-auto items-center flex justify-between relative">

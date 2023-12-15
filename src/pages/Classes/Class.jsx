@@ -35,10 +35,11 @@ const Class = () => {
         break;
     }
   }, [classId]);
+
   return (
     <>
       <ClassBanner classRank={classRank} />
-      <Subjects />
+      <Subjects classRank={classRank} />
     </>
   );
 };
