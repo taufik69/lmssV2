@@ -2,11 +2,14 @@ import React, { useEffect, useState } from "react";
 import DesktopCard from "../Cards/DesktopCard/DesktopCard";
 import SubjectCard from "../Cards/SubjectCard/SubjectCard";
 import axios from "axios";
+import { useParams } from "react-router-dom";
 
 const Subjects = ({ classRank }) => {
   const [classSubject, setclassSubject] = useState([]);
   const [aboveSix, setaboveSix] = useState([]);
   const [belowSix, setbelowSix] = useState([]);
+  const { classId } = useParams();
+
   useEffect(() => {
     const allsubject = async () => {
       const Classdata = await axios.get(
@@ -43,9 +46,9 @@ const Subjects = ({ classRank }) => {
       </div>
       <div>
         <div className="mt-4 flex gap-2 flex-wrap justify-center">
-          {aboveSix.map((item) => (
-            <SubjectCard subject={item} />
-          ))}
+          {classId.split("-")[1] >= 9
+            ? aboveSix.map((item) => <SubjectCard subject={item} />)
+            : belowSix.map((item) => <SubjectCard subject={item} />)}
         </div>
         <div className="flex gap-5 mt-20 flex-col md:flex-row">
           <DesktopCard />
