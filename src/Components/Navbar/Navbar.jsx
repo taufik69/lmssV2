@@ -46,9 +46,10 @@ const Navbar1 = () => {
     setShow(!show);
   };
   const handelClassShow = (item) => {
+   
     setClassShow(!classShow);
-    if (item == "ক্লাস 5 -6") {
-      Navigate("class/class-4");
+    if (item == "All Classes") {
+      Navigate("class/class-5");
     } else {
       Navigate(`${item}`);
     }
@@ -118,8 +119,8 @@ const Navbar1 = () => {
             id="navbar-dropdown"
           >
             <ul className="flex flex-col items-center font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-5 md:mt-0 md:border-0 md:bg-white">
-              {catagoreyData.data?.map((item, index) =>
-                index > 0 && index < 2 ? (
+              {catagoreyData.data?.map((item) =>
+                item.category_title === "All Classes" ? (
                   <li id="class-button" key={item.id}>
                     <button
                       onClick={() => handelClassShow(item.category_title)}
