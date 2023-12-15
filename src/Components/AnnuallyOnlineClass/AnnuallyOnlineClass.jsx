@@ -5,6 +5,7 @@ import TitleTag from "../Titles/TitleTag";
 import "./annuallyonlineClass.css";
 // import Button from "../Extra/button";
 import useFetchAPI from "../../CustomFetcher/CustomFetchHooks";
+import ReactPlayer from "react-player/lazy";
 
 const AnnuallyOnlineClass = () => {
   const classVedio = useFetchAPI("https://ex-3academy.com/lms/videos/");
@@ -27,11 +28,14 @@ const AnnuallyOnlineClass = () => {
             }
           />
           <div className="flex md:justify-between justify-center gap-y-3 flex-wrap  py-10 md:px-0 px-3">
-            {classVedio.data?.map((item) => 
-            <CommonCard  />
-
-            )}
-            
+            {classVedio.data?.map((item) => (
+              <iframe
+                src={item.link}
+                width={450}
+                height={300}
+                frameborder="0"
+              ></iframe>
+            ))}
           </div>
         </div>
         <div>
