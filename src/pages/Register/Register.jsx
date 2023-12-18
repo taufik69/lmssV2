@@ -39,14 +39,14 @@ const Register = () => {
   /**
    * @HandleRegister function thats take a private api
    * @param({}) nothing pass argumnet in this function
-   * @api :https://ex-3academy.com//account/api/register/
+   * @api :https://api.ex-3academy.com/account/api/register/
    */
 
   const handleRegistration = async (e) => {
     try {
       e.preventDefault();
       let registerData = await axios.post(
-        "https://ex-3academy.com/account/api/register/",
+        "https://api.ex-3academy.com/account/api/register/",
         {
           username: fullName,
           email: email,

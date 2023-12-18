@@ -11,16 +11,19 @@ const Navbar1 = () => {
 
   /**
    * todo : Fetching catagoreis Data catagories means menu item
-   * @API : https://ex-3academy.com/lms/categories/
+   * @API : https://api.ex-3academy.com/lms/categories/
    */
-  const catagoreyData = useFetchAPI("https://ex-3academy.com/lms/categories/");
+  const catagoreyData = useFetchAPI(
+    "https://api.ex-3academy.com/lms/categories/"
+  );
 
+  console.log("catagoreyData", catagoreyData);
   /**
    * todo : Fetching catagoreis Data class ranked
    * @API : https://ex-3academy.com/lms/classes-rank/
    */
   const classRankedData = useFetchAPI(
-    "https://ex-3academy.com/lms/classes-rank/"
+    "https://api.ex-3academy.com/lms/classes-rank/"
   );
 
   function getWindowSize() {

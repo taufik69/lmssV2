@@ -37,14 +37,14 @@ const Login = () => {
   /**
    * @HandleLogin function thats take a private api
    * @param({}) nothing pass argumnet in this function
-   * @api :https://ex-3academy.com//account/api/register/
+   * @api :https://api.ex-3academy.com//account/api/register/
    */
 
   const HandleLogin = async (e) => {
     try {
       e.preventDefault();
       let loginData = await axios.post(
-        "https://ex-3academy.com/account/api/login/",
+        "https://api.ex-3academy.com/account/api/login/",
         {
           username: username,
           password: password,
@@ -70,7 +70,6 @@ const Login = () => {
         localStorage.setItem("UserToken", JSON.stringify(data));
         dispatch(loginUser(data));
       }
-  
     } catch (err) {
       const { error } = err.response.data;
       toast.error(error, {

@@ -26,11 +26,11 @@ function App() {
           <Route path="/" element={<MainLayouts />}>
             <Route index element={<Home />} />
             <Route path="/Admission" element={<Admission />} />
-            <Route path="/অনলাইন ব্যাচ" element={<OnlineBatch />} />
+            <Route path="/Online Batch" element={<OnlineBatch />} />
             <Route path="/ভর্তি পরীক্ষা" element={<AddmissonTest />} />
             <Route path="/class/:classId" element={<Class />} />
             <Route path="/স্কিলস" element={<SkillsPage />} />
-            <Route path="/চাকরি প্রস্তুতি" element={<Jobpreparationpage />} />
+            <Route path="/Job Preparetion" element={<Jobpreparationpage />} />
           </Route>
         </Route>
 

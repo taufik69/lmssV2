@@ -5,11 +5,10 @@ import TitleTag from "../Titles/TitleTag";
 import "./annuallyonlineClass.css";
 // import Button from "../Extra/button";
 import useFetchAPI from "../../CustomFetcher/CustomFetchHooks";
-import ReactPlayer from "react-player/lazy";
 
 const AnnuallyOnlineClass = () => {
-  const classVedio = useFetchAPI("https://ex-3academy.com/lms/videos/");
-
+  const classVedio = useFetchAPI("https://api.ex-3academy.com/lms/videos/");
+  console.log("class vedio", classVedio);
   return (
     <>
       <div className="py-20">
