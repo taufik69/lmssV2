@@ -192,7 +192,7 @@ const Login = () => {
                   </Link>
                 </p>
               </form>
-              <button
+              {/* <button
                 onClick={() => {
                   handelSinginWithGoogle();
                 }}
@@ -206,7 +206,7 @@ const Login = () => {
                   alt="google-logo"
                 />
                 Sign with google
-              </button>
+              </button> */}
             </div>
           </div>
         </div>
